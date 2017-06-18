@@ -14,7 +14,7 @@ public class CountryResolver {
 
     public Collection<UICountry> resolveCountries(UIContract contract, UITarget target) {
         Collection<UICountry> contractCountries = contract.getCountries();
-        Assert.notEmpty(contractCountries, "Global countries not yet supported...");
+        Assert.notEmpty(contractCountries, "Global contracts not yet supported...");
         Collection<UICountry> targetCountries = target.getCountries();
         if(targetCountries.isEmpty()) {
             return Collections.unmodifiableCollection(contractCountries);
