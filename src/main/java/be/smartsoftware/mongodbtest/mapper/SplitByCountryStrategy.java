@@ -20,15 +20,17 @@ public class SplitByCountryStrategy implements UISplitStrategy {
     private Boolean useCountryCurrency;
 
     @Override
-    public Collection<LinkingTarget> execute(UITarget target, UIContract contract, Collection<UICountry> countries) {
-        Assert.notNull(useCountryCurrency, "useCountryCurrency not set for target with name '" + target.getName() + "'");
+    public Collection<LinkingTarget> execute(UITarget target, UIContract contract, Collection<UICountry> countries,
+                                             CountryMapper countryMapper) {
+        Assert.notNull(useCountryCurrency,
+                "useCountryCurrency not set for target with name '" + target.getName() + "'");
         return countries
                 .stream()
                 .map(country ->
                         LinkingTarget.builder()
                                 .name((target.getName() + " " + country.getCode()))
                                 .currency(useCountryCurrency ? country.getCurrency() : contract.getCurrency())
-                                .countries(Arrays.asList(country.getName()))
+                                .countries(countryMapper.map(Arrays.asList(country)))
                                 .build())
                 .collect(toList());
     }
