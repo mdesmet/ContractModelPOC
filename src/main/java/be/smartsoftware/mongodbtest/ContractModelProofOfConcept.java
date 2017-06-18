@@ -70,13 +70,13 @@ public class ContractModelProofOfConcept implements CommandLineRunner {
         // saving in mongodb
         repository.save(testcontact);
 
-
         //  mapping to DB format
         for (UIContract contract : repository.findAll()) {
             logger.info(contract.toString());
             LinkingContract linkingContract = mapper.map(contract);
             logger.info(linkingContract.toString());
         }
-        System.out.println();
+
+        System.exit(0);
     }
 }
