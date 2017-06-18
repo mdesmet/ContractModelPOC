@@ -34,7 +34,6 @@
           "currency": "USD"
         }
       ],
-
       "splitStrategy": {
         "type": "SPLIT_BY_POS",
         "useCountryCurrency": false
