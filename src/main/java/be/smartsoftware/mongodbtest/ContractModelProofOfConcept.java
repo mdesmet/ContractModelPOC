@@ -24,10 +24,8 @@ import java.io.InputStream;
 
 @SpringBootApplication
 public class ContractModelProofOfConcept implements CommandLineRunner {
-    private ContractRepository repository;
-
-    private ContractMapper mapper;
-
+    private final ContractRepository repository;
+    private final ContractMapper mapper;
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -42,11 +40,9 @@ public class ContractModelProofOfConcept implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
         repository.deleteAll();
 
         // read json
-
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new Jdk8Module());
         UIContract testcontact = objectMapper.readValue(
@@ -54,10 +50,11 @@ public class ContractModelProofOfConcept implements CommandLineRunner {
         logger.info(testcontact.toString());
 
         // validate the json
-        InputStream contractSchemaInputStream = getClass().getResourceAsStream("/contract-schema.json");
-        JSONObject rawSchema = new JSONObject(new JSONTokener(contractSchemaInputStream));
+        JSONObject rawSchema = new JSONObject(new JSONTokener(
+                getClass().getResourceAsStream("/contract-schema.json")));
         Schema schema = SchemaLoader.load(rawSchema);
-        JSONObject rawInput = new JSONObject(new JSONTokener(getClass().getResourceAsStream("/contract.json")));
+        JSONObject rawInput = new JSONObject(new JSONTokener(
+                getClass().getResourceAsStream("/contract.json")));
         try {
             schema.validate(rawInput);
         }catch(ValidationException e) {

@@ -12,15 +12,18 @@ import static java.util.stream.Collectors.toList;
 
 @Component
 public class ContractMapper {
+    private final TargetMapper targetMapper;
 
     @Autowired
-    private TargetMapper targetMapper;
+    public ContractMapper(TargetMapper targetMapper) {
+        this.targetMapper = targetMapper;
+    }
 
     public LinkingContract map(UIContract contract) {
         Collection<LinkingTarget> linkingTargets = contract
                 .getTargets()
                 .stream()
-                .map(target -> targetMapper.map(target))
+                .map(targetMapper::map)
                 .flatMap(Collection::stream)
                 .collect(toList());
 
