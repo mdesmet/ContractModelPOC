@@ -1,0 +1,47 @@
+{
+  "name": "test Contract",
+  "targets": [
+    {
+      "name": "Target 1",
+      "countries": [
+        {
+          "name": "Belgium",
+          "code": "BE",
+          "currency": "EUR"
+        },
+        {
+          "name": "USA",
+          "code": "US",
+          "currency": "USD"
+        }
+      ],
+      "splitStrategy": {
+        "type": "SPLIT_BY_POS",
+        "useCountryCurrency": true
+      }
+    },
+    {
+      "name": "Target 2",
+      "countries": [
+        {
+          "name": "Belgium",
+          "code": "BE",
+          "currency": "EUR"
+        },
+        {
+          "name": "USA",
+          "code": "US",
+          "currency": "USD"
+        }
+      ],
+
+      "splitStrategy": {
+        "type": "SPLIT_BY_POS",
+        "useCountryCurrency": false
+      }
+    },
+    {
+      "name": "Target 3"
+    }
+  ]
+}
