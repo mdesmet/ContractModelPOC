@@ -17,7 +17,7 @@ import java.util.Collection;
 public class LinkingTarget {
     @Id
     @Column(name = "TARGET_ID")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long targetId;
     @Column(name = "TARGET_NAME", nullable = false)
     private String name;

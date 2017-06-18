@@ -13,7 +13,7 @@ import java.util.Collection;
         include = JsonTypeInfo.As.EXTERNAL_PROPERTY,
         property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = SplitByCountryStrategy.class, name = "SPLIT_BY_POS") }
+        @JsonSubTypes.Type(value = SplitByCountryStrategy.class, name = "SPLIT_BY_POS")}
 )
 public interface UISplitStrategy {
     Collection<LinkingTarget> execute(UITarget target, UIContract contract, Collection<UICountry> countries, CountryMapper countryMapper);

@@ -65,7 +65,7 @@ public class ContractModelProofOfConcept implements CommandLineRunner {
                 getClass().getResourceAsStream("/contract.json")));
         try {
             schema.validate(rawInput);
-        }catch(ValidationException e) {
+        } catch (ValidationException e) {
             logger.error(e.getMessage());
             e.getCausingExceptions().stream()
                     .map(ValidationException::getMessage)

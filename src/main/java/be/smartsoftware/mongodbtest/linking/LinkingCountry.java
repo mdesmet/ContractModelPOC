@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "COUNTRY")
 public class LinkingCountry {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "COUNTRY_ID")
     private Long id;
     @Column(name = "COUNTRY_NAME", nullable = false)

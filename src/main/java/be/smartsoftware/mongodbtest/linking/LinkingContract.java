@@ -17,7 +17,7 @@ import java.util.Collection;
 public class LinkingContract {
     @Id
     @Column(name = "CONTRACT_ID")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long contractId;
     @Column(name = "CONTRACT_NAME", nullable = false)
     private String name;
