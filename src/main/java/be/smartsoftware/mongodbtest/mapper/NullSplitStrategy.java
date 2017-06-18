@@ -10,6 +10,8 @@ import be.smartsoftware.mongodbtest.ui.UITarget;
 import java.util.Arrays;
 import java.util.Collection;
 
+import static java.util.stream.Collectors.toList;
+
 public class NullSplitStrategy implements UISplitStrategy {
     @Override
     public Collection<LinkingTarget> execute(UITarget target, UIContract contract, Collection<UICountry> countries,
@@ -18,7 +20,9 @@ public class NullSplitStrategy implements UISplitStrategy {
                 .builder()
                 .name((target.getName()))
                 .currency(contract.getCurrency())
-                .countries(countryMapper.map(countries))
+                .countries(countries.stream()
+                        .map(countryMapper::map)
+                        .collect(toList()))
                 .build());
     }
 }

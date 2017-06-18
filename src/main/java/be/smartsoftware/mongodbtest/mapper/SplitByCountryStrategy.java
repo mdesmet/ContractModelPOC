@@ -30,7 +30,7 @@ public class SplitByCountryStrategy implements UISplitStrategy {
                         LinkingTarget.builder()
                                 .name((target.getName() + " " + country.getCode()))
                                 .currency(useCountryCurrency ? country.getCurrency() : contract.getCurrency())
-                                .countries(countryMapper.map(Arrays.asList(country)))
+                                .countries(Arrays.asList(countryMapper.map(country)))
                                 .build())
                 .collect(toList());
     }
