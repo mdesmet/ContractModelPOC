@@ -13,9 +13,10 @@ import java.util.Collection;
 public class UIContract {
     @Id
     private String id;
-
     private String name;
-
+    private String currency;
+    @Default
+    private Collection<UICountry> countries = new ArrayList<>();
     @Default
     private Collection<UITarget> targets = new ArrayList<>();
 

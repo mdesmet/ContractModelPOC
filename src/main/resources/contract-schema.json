@@ -9,6 +9,15 @@
     "name": {
       "type": "string"
     },
+    "currency": {
+      "type": "string"
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/country"
+      }
+    },
     "targets": {
       "type": "array",
       "items": {
@@ -18,7 +27,8 @@
   },
   "additionalProperties": false,
   "required": [
-    "name"
+    "name",
+    "currency"
   ],
   "definitions": {
     "target": {

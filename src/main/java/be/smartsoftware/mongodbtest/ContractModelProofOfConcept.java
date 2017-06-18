@@ -19,9 +19,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
 
-import java.io.File;
-import java.io.InputStream;
-
 @SpringBootApplication
 public class ContractModelProofOfConcept implements CommandLineRunner {
     private final ContractRepository repository;

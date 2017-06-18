@@ -15,5 +15,5 @@ import java.util.Collection;
         @JsonSubTypes.Type(value = SplitByCountryStrategy.class, name = "SPLIT_BY_POS") }
 )
 public interface UISplitStrategy {
-    Collection<LinkingTarget> execute(UITarget target);
+    Collection<LinkingTarget> execute(UITarget target, UIContract contract, Collection<UICountry> countries);
 }

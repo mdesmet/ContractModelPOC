@@ -23,7 +23,7 @@ public class ContractMapper {
         Collection<LinkingTarget> linkingTargets = contract
                 .getTargets()
                 .stream()
-                .map(targetMapper::map)
+                .map(target -> targetMapper.map(target, contract))
                 .flatMap(Collection::stream)
                 .collect(toList());
 
