@@ -75,6 +75,9 @@ public class ContractModelProofOfConcept implements CommandLineRunner {
             logger.info(contract.toString());
             LinkingContract linkingContract = mapper.map(contract);
             logger.info(linkingContract.toString());
+
+            // save in db
+            // not implemented
         }
 
         System.exit(0);
