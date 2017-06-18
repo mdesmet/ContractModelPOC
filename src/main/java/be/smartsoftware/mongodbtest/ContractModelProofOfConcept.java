@@ -28,13 +28,13 @@ public class ContractModelProofOfConcept implements CommandLineRunner {
 
     private ContractMapper mapper;
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     public ContractModelProofOfConcept(ContractRepository repository, ContractMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
-
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public static void main(String[] args) {
         SpringApplication.run(ContractModelProofOfConcept.class, args);
