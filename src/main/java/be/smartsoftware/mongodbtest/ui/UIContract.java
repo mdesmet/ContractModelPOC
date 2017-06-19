@@ -5,8 +5,6 @@ import lombok.Builder.Default;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import java.util.ArrayList;
 import java.util.Collection;
 

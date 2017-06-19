@@ -1,8 +1,5 @@
-package be.smartsoftware.mongodbtest.mapper;
+package be.smartsoftware.mongodbtest.ui;
 
-import be.smartsoftware.mongodbtest.ui.UIContract;
-import be.smartsoftware.mongodbtest.ui.UICountry;
-import be.smartsoftware.mongodbtest.ui.UITarget;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -10,7 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 @Component
-public class CountryResolver {
+public class UICountryResolver {
 
     public Collection<UICountry> resolveCountries(UIContract contract, UITarget target) {
         Collection<UICountry> contractCountries = contract.getCountries();
