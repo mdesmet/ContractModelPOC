@@ -1,5 +1,6 @@
 package be.smartsoftware.contracts.data.ui.validator;
 
+import be.smartsoftware.contracts.data.reference.ReferenceCountry;
 import be.smartsoftware.contracts.data.reference.repo.ReferenceCountryRepository;
 import be.smartsoftware.contracts.data.ui.UICountry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,20 +26,15 @@ public class ValidCountryConstraintValidator implements ConstraintValidator<Vali
 
     @Override
     public boolean isValid(List<UICountry> countries, ConstraintValidatorContext constraintValidatorContext) {
-        try {
-            countries.forEach(country -> {
-                if(referenceCountryRepository.findAll()
-                        .stream()
-                        .noneMatch(referenceCountry -> {
-                            if(country == null || referenceCountry == null)
-                                return false;
-                            return country.getCode().equals(referenceCountry.getCode());
-                        }))
-                    throw new RuntimeException();
-            });
-        } catch (RuntimeException e) {
-            return false;
-        }
-        return true;
+        List<ReferenceCountry> referenceCountries = referenceCountryRepository.findAll();
+        return countries.stream().noneMatch(country ->
+            referenceCountries
+                    .stream()
+                    .noneMatch(referenceCountry -> {
+                        if(country == null || referenceCountry == null)
+                            return false;
+                        return country.getCode().equals(referenceCountry.getCode());
+                    })
+        );
     }
 }
