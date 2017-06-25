@@ -1,6 +1,6 @@
-package be.smartsoftware.mongodbtest.ui;
+package be.smartsoftware.contracts.data.ui;
 
-import be.smartsoftware.mongodbtest.ui.splitstrategy.CountryUISplitStrategy;
+import be.smartsoftware.contracts.data.ui.splitstrategy.CountryUISplitStrategy;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 

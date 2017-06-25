@@ -1,4 +1,4 @@
-package be.smartsoftware.mongodbtest.ui;
+package be.smartsoftware.contracts.data.ui;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;

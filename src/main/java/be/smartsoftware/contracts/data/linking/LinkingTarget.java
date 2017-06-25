@@ -1,4 +1,4 @@
-package be.smartsoftware.mongodbtest.linking;
+package be.smartsoftware.contracts.data.linking;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

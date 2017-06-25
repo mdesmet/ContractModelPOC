@@ -1,8 +1,8 @@
-package be.smartsoftware.mongodbtest.mapper;
+package be.smartsoftware.contracts.data.mapper;
 
-import be.smartsoftware.mongodbtest.linking.LinkingTarget;
-import be.smartsoftware.mongodbtest.ui.*;
-import be.smartsoftware.mongodbtest.ui.splitstrategy.NullUISplitStrategy;
+import be.smartsoftware.contracts.data.linking.LinkingTarget;
+import be.smartsoftware.contracts.data.ui.*;
+import be.smartsoftware.contracts.data.ui.splitstrategy.NullUISplitStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +24,7 @@ public class TargetMapper {
 
     public Collection<LinkingTarget> map(UITarget target, UIContract contract) {
         Collection<UICountry> countries = countryResolver.resolveCountries(contract, target);
-        Collection<? extends UICountryGrouping> groupings = target.getSplitStrategy().orElse(new NullUISplitStrategy()).execute(countries);
+        Collection<? extends UICountryGrouping> groupings = (target.getSplitStrategy() == null ? new NullUISplitStrategy() : target.getSplitStrategy()).execute(countries);
 
         return groupings
                 .stream()

@@ -1,7 +1,7 @@
-package be.smartsoftware.mongodbtest.mapper;
+package be.smartsoftware.contracts.data.mapper;
 
-import be.smartsoftware.mongodbtest.linking.LinkingCountry;
-import be.smartsoftware.mongodbtest.ui.UICountry;
+import be.smartsoftware.contracts.data.linking.LinkingCountry;
+import be.smartsoftware.contracts.data.ui.UICountry;
 import org.springframework.stereotype.Component;
 
 @Component

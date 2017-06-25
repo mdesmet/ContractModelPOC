@@ -1,8 +1,8 @@
-package be.smartsoftware.mongodbtest.ui.splitstrategy;
+package be.smartsoftware.contracts.data.ui.splitstrategy;
 
-import be.smartsoftware.mongodbtest.ui.UICountry;
-import be.smartsoftware.mongodbtest.ui.UISingleCountryGrouping;
-import be.smartsoftware.mongodbtest.ui.UISplitStrategy;
+import be.smartsoftware.contracts.data.ui.UICountry;
+import be.smartsoftware.contracts.data.ui.UISingleCountryGrouping;
+import be.smartsoftware.contracts.data.ui.UISplitStrategy;
 import lombok.Builder;
 import lombok.Value;
 

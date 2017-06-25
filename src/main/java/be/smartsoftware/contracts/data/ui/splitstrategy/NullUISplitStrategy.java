@@ -1,9 +1,9 @@
-package be.smartsoftware.mongodbtest.ui.splitstrategy;
+package be.smartsoftware.contracts.data.ui.splitstrategy;
 
 
-import be.smartsoftware.mongodbtest.ui.UICountry;
-import be.smartsoftware.mongodbtest.ui.UIMultiCountryGrouping;
-import be.smartsoftware.mongodbtest.ui.UISplitStrategy;
+import be.smartsoftware.contracts.data.ui.UICountry;
+import be.smartsoftware.contracts.data.ui.UIMultiCountryGrouping;
+import be.smartsoftware.contracts.data.ui.UISplitStrategy;
 
 import java.util.Arrays;
 import java.util.Collection;

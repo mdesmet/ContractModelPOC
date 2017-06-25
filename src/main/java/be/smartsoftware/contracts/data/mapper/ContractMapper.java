@@ -1,8 +1,8 @@
-package be.smartsoftware.mongodbtest.mapper;
+package be.smartsoftware.contracts.data.mapper;
 
-import be.smartsoftware.mongodbtest.linking.LinkingContract;
-import be.smartsoftware.mongodbtest.linking.LinkingTarget;
-import be.smartsoftware.mongodbtest.ui.UIContract;
+import be.smartsoftware.contracts.data.linking.LinkingContract;
+import be.smartsoftware.contracts.data.linking.LinkingTarget;
+import be.smartsoftware.contracts.data.ui.UIContract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
