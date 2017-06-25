@@ -10,11 +10,11 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.List;
 
 @Component
-public class CountryConstraintValidator implements ConstraintValidator<ValidCountry, List<UICountry>> {
+public class ValidCountryConstraintValidator implements ConstraintValidator<ValidCountry, List<UICountry>> {
     private ReferenceCountryRepository referenceCountryRepository;
 
     @Autowired
-    public CountryConstraintValidator(ReferenceCountryRepository referenceCountryRepository) {
+    public ValidCountryConstraintValidator(ReferenceCountryRepository referenceCountryRepository) {
         this.referenceCountryRepository = referenceCountryRepository;
     }
 
