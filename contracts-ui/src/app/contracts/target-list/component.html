@@ -1,0 +1,5 @@
+<target
+  *ngFor="let target of targets | async; trackBy:getKey"
+  [key]="getKey(null, target)"
+>
+</target>

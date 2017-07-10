@@ -1,0 +1,9 @@
+<gsm-spinner *ngIf="loading | async">
+</gsm-spinner>
+<contract-header></contract-header>
+<target-list
+  [targets]="targets$"
+></target-list>
+
+<gsm-error-well *ngIf="error | async">
+</gsm-error-well>

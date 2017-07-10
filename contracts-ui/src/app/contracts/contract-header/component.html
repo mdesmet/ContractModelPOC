@@ -1,0 +1,15 @@
+<div>
+  <label>Id:</label>
+  <span>{{id$|async}}</span>
+</div>
+<div>
+  <label>Name:</label>
+  <span>{{name$|async}}</span>
+</div>
+<div>
+  <label>Point of Sales:</label>
+  <span *ngFor="let pointOfSale of pointOfSales$|async; let i = index">
+    {{pointOfSale.name}}
+    {{i === (pointOfSales$|async).length - 1 ? '' : ', '}}
+  </span>
+</div>
