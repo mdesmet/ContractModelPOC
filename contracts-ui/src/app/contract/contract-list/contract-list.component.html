@@ -1,0 +1,36 @@
+<div class="example-container mat-elevation-z8">
+  <md-table #table [dataSource]="dataSource">
+
+    <ng-container cdkColumnDef="contractId">
+      <md-header-cell *cdkHeaderCellDef> ID</md-header-cell>
+      <md-cell *cdkCellDef="let contract"> {{contract.id}}</md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="description">
+      <md-header-cell *cdkHeaderCellDef> Description</md-header-cell>
+      <md-cell *cdkCellDef="let contract"> {{contract.contractScope.description}}</md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="systemName">
+      <md-header-cell *cdkHeaderCellDef> System name</md-header-cell>
+      <md-cell *cdkCellDef="let contract"> {{contract.contractScope.systemName}}</md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="currencyCode">
+      <md-header-cell *cdkHeaderCellDef>Currency code</md-header-cell>
+      <md-cell *cdkCellDef="let contract"> {{contract.contractScope.currencyCode}}</md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="action">
+      <md-header-cell *cdkHeaderCellDef>Action</md-header-cell>
+      <md-cell *cdkCellDef="let contract">
+        <button md-button (click)="gotoContract(contract.id)">
+          <md-icon>navigate_next</md-icon>
+        </button>
+      </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let contract; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>

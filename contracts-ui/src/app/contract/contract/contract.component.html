@@ -1,0 +1,43 @@
+<div *ngIf="contractView">
+  <md-toolbar color="primary">
+    <span>{{contractView.contractScope.description}}</span>
+    <span class="toolbar-spacer"></span>
+    <button md-button *ngIf="viewMode; else confirmEdit" (click)="startEdit()">
+      <md-icon  class="toolbar-icon">edit</md-icon>
+    </button>
+    <ng-template #confirmEdit>
+      <button md-button (click)="cancelEdit()">
+        <md-icon class="toolbar-icon">undo</md-icon>
+      </button>
+      <button md-button (click)="submitEdit()">
+        <md-icon class="toolbar-icon">check</md-icon>
+      </button>
+    </ng-template>
+
+  </md-toolbar>
+  <form class="form">
+    <div *ngIf="viewMode; else editDescription">{{contractView.contractScope.description}}</div>
+    <ng-template #editDescription>
+      <md-input-container [floatPlaceholder]="false">
+        <input mdInput placeholder="Description" name="description" [(ngModel)]="contractEdit.contractScope.description">
+      </md-input-container>
+    </ng-template>
+
+    <h4>Points of sale</h4>
+    <div >
+      <div *ngIf="viewMode; else editPointsOfSale">
+        <div *ngFor="let pointOfSale of contractView.contractScope.pointsOfSale; index as i">
+          {{pointOfSale.name}}
+        </div>
+      </div>
+      <ng-template #editPointsOfSale>
+        <div *ngFor="let pointOfSale of contractEdit.contractScope.pointsOfSale; index as i">
+          <md-input-container [floatPlaceholder]="false">
+            <input mdInput placeholder="Point of sale {{i+1}}" name="pointOfSale+{{i+1}}" [(ngModel)]="pointOfSale.name">
+          </md-input-container>
+        </div>
+      </ng-template>
+    </div>
+  </form>
+</div>
+
