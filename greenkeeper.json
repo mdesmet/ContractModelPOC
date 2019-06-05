@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "contracts-ui/package.json"
+      ]
+    }
+  }
+}
